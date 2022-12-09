@@ -6,7 +6,7 @@ import sys
 def main():
     app = QApplication([])
     window = MainWindow()
-    window.setWindowTitle('Main Screen')
+    window.setWindowTitle('Welcome!')
     window.show()
     app.exec_()
 
