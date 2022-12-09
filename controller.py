@@ -133,6 +133,7 @@ class Register(QMainWindow, Ui_Register):
         else:
             self.registerLineEdit_password_con.setEchoMode(QLineEdit.Normal)
 
+            
 class Login(QMainWindow, Ui_Login):
     """
     class that runs the login screen
@@ -220,6 +221,7 @@ class Login(QMainWindow, Ui_Login):
         self.login_succ.show()
         self.hide()
 
+        
 class LoginSucc(QMainWindow, Ui_LoginSucc):
     """
     Class that runs the window that shows up when someone successfully logs in
@@ -251,6 +253,7 @@ class LoginSucc(QMainWindow, Ui_LoginSucc):
                     flnames.append(line[1])
         self.succ_login_label.setText(f'Welcome {flnames[0]} {flnames[1]}')
 
+        
 class ForgotPass(QMainWindow, Ui_ForgotPass):
     """
     class that runs the login screen
