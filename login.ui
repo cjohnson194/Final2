@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Login</class>
  <widget class="QMainWindow" name="Login">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -56,6 +59,12 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Courier</family>
+      <pointsize>19</pointsize>
+     </font>
+    </property>
    </widget>
    <widget class="QLineEdit" name="LoginlineEdit_password">
     <property name="geometry">
@@ -65,6 +74,15 @@
       <width>461</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier</family>
+      <pointsize>19</pointsize>
+     </font>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
     </property>
    </widget>
    <widget class="QLabel" name="label_username">
@@ -142,9 +160,9 @@
    <widget class="QLabel" name="login_output_label">
     <property name="geometry">
      <rect>
-      <x>406</x>
-      <y>640</y>
-      <width>451</width>
+      <x>400</x>
+      <y>670</y>
+      <width>461</width>
       <height>20</height>
      </rect>
     </property>
@@ -153,6 +171,48 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="eyepass_login">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>462</y>
+      <width>75</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>eyepass.png</normaloff>eyepass.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>75</width>
+      <height>75</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_forgot_password">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>640</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Forgot Passoword</string>
     </property>
    </widget>
   </widget>
@@ -168,6 +228,14 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>LoginlineEdit_username</tabstop>
+  <tabstop>LoginlineEdit_password</tabstop>
+  <tabstop>eyepass_login</tabstop>
+  <tabstop>LoginpushButton_back</tabstop>
+  <tabstop>LoginpushButton_login</tabstop>
+  <tabstop>button_forgot_password</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
