@@ -14,6 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Login(object):
     def setupUi(self, Login):
         Login.setObjectName("Login")
+        Login.setWindowModality(QtCore.Qt.NonModal)
         Login.resize(1200, 800)
         Login.setMinimumSize(QtCore.QSize(1200, 800))
         Login.setMaximumSize(QtCore.QSize(1200, 800))
@@ -28,9 +29,18 @@ class Ui_Login(object):
         self.label_top.setObjectName("label_top")
         self.LoginlineEdit_username = QtWidgets.QLineEdit(self.centralwidget)
         self.LoginlineEdit_username.setGeometry(QtCore.QRect(400, 300, 451, 71))
+        font = QtGui.QFont()
+        font.setFamily("Courier")
+        font.setPointSize(19)
+        self.LoginlineEdit_username.setFont(font)
         self.LoginlineEdit_username.setObjectName("LoginlineEdit_username")
         self.LoginlineEdit_password = QtWidgets.QLineEdit(self.centralwidget)
         self.LoginlineEdit_password.setGeometry(QtCore.QRect(400, 450, 461, 81))
+        font = QtGui.QFont()
+        font.setFamily("Courier")
+        font.setPointSize(19)
+        self.LoginlineEdit_password.setFont(font)
+        self.LoginlineEdit_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.LoginlineEdit_password.setObjectName("LoginlineEdit_password")
         self.label_username = QtWidgets.QLabel(self.centralwidget)
         self.label_username.setGeometry(QtCore.QRect(400, 252, 161, 41))
@@ -57,10 +67,23 @@ class Ui_Login(object):
         self.LoginpushButton_back.setFont(font)
         self.LoginpushButton_back.setObjectName("LoginpushButton_back")
         self.login_output_label = QtWidgets.QLabel(self.centralwidget)
-        self.login_output_label.setGeometry(QtCore.QRect(406, 640, 451, 20))
+        self.login_output_label.setGeometry(QtCore.QRect(400, 670, 461, 20))
         self.login_output_label.setText("")
         self.login_output_label.setAlignment(QtCore.Qt.AlignCenter)
         self.login_output_label.setObjectName("login_output_label")
+        self.eyepass_login = QtWidgets.QPushButton(self.centralwidget)
+        self.eyepass_login.setGeometry(QtCore.QRect(770, 462, 75, 61))
+        self.eyepass_login.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("eyepass.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.eyepass_login.setIcon(icon)
+        self.eyepass_login.setIconSize(QtCore.QSize(75, 75))
+        self.eyepass_login.setCheckable(True)
+        self.eyepass_login.setObjectName("eyepass_login")
+        self.button_forgot_password = QtWidgets.QPushButton(self.centralwidget)
+        self.button_forgot_password.setGeometry(QtCore.QRect(560, 640, 121, 23))
+        self.button_forgot_password.setAutoFillBackground(False)
+        self.button_forgot_password.setObjectName("button_forgot_password")
         Login.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Login)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1200, 21))
@@ -72,6 +95,11 @@ class Ui_Login(object):
 
         self.retranslateUi(Login)
         QtCore.QMetaObject.connectSlotsByName(Login)
+        Login.setTabOrder(self.LoginlineEdit_username, self.LoginlineEdit_password)
+        Login.setTabOrder(self.LoginlineEdit_password, self.eyepass_login)
+        Login.setTabOrder(self.eyepass_login, self.LoginpushButton_back)
+        Login.setTabOrder(self.LoginpushButton_back, self.LoginpushButton_login)
+        Login.setTabOrder(self.LoginpushButton_login, self.button_forgot_password)
 
     def retranslateUi(self, Login):
         _translate = QtCore.QCoreApplication.translate
@@ -81,6 +109,7 @@ class Ui_Login(object):
         self.label_password.setText(_translate("Login", "Password"))
         self.LoginpushButton_login.setText(_translate("Login", "Login"))
         self.LoginpushButton_back.setText(_translate("Login", "Back"))
+        self.button_forgot_password.setText(_translate("Login", "Forgot Passoword"))
 
 
 if __name__ == "__main__":
